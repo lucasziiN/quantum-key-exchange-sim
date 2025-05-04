@@ -25,7 +25,11 @@ namespace COMPX304_A3
         public static byte[] Apply(byte[] data, byte[] key)
         {
             // 1) Validate inputs
-            if (key.Length == 0 || key == null)
+            if (key is null)
+            {
+                throw new ArgumentNullException(nameof(key));
+            }
+            if (key.Length == 0)
             {
                 throw new ArgumentException("Key must not be empty", nameof(key));
             }
