@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35931.197 d17.13
+VisualStudioVersion = 17.13.35931.197
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "COMPX304-A3", "COMPX304-A3\COMPX304-A3.csproj", "{164CAB51-34D6-47EE-BD93-40B0A82D6B62}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "COMPX304_A3.Tests", "COMPX304_A3.Tests\COMPX304_A3.Tests.csproj", "{BF10ECFE-FE3E-4F17-88A5-D3561057258C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{164CAB51-34D6-47EE-BD93-40B0A82D6B62}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{164CAB51-34D6-47EE-BD93-40B0A82D6B62}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{164CAB51-34D6-47EE-BD93-40B0A82D6B62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF10ECFE-FE3E-4F17-88A5-D3561057258C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF10ECFE-FE3E-4F17-88A5-D3561057258C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF10ECFE-FE3E-4F17-88A5-D3561057258C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF10ECFE-FE3E-4F17-88A5-D3561057258C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
