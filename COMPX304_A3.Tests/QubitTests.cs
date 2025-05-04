@@ -6,21 +6,21 @@ public class QubitTests
 {
     [TestMethod]
     [ExpectedException(typeof(ArgumentOutOfRangeException))]
-    public void ConstructorInvalidBitThrowsException()
+    public void Constructor_BitOutOfRange_ThrowsArgumentOutOfRangeException()
     {
         new Qubit(2, 0);
     }
 
     [TestMethod]
     [ExpectedException(typeof(ArgumentOutOfRangeException))]
-    public void ConstructorInvalidBaseThrowsException()
+    public void Constructor_BasisOutOfRange_ThrowsArgumentOutOfRangeException()
     { 
         new Qubit(0, 3);
     }
 
     [TestMethod]
     [ExpectedException(typeof(ArgumentOutOfRangeException))]
-    public void SetInvalidBitThrowsException()
+    public void Set_BitOutOfRange_ThrowsArgumentOutOfRangeException()
     {
         var q = new Qubit(0, 0);
         q.Set(4, 0);
@@ -28,7 +28,7 @@ public class QubitTests
 
     [TestMethod]
     [ExpectedException(typeof(ArgumentOutOfRangeException))]
-    public void SetInvalidBasisThrowsException()
+    public void Set_BasisOutOfRange_ThrowsArgumentOutOfRangeException()
     {
         var q = new Qubit(0, 0);
         q.Set(0, 5);
@@ -36,7 +36,7 @@ public class QubitTests
 
     [TestMethod]
     [ExpectedException(typeof(ArgumentOutOfRangeException))]
-    public void MeasureInvalidBasisThrowsException()
+    public void Measure_BasisOutOfRange_ThrowsArgumentOutOfRangeException()
     {
         new Qubit(0, 0).Measure(-1);
     }
@@ -44,7 +44,7 @@ public class QubitTests
 
 
     [TestMethod]
-    public void MeasureSameBasisReturnsStoredValue()
+    public void Measure_SameBasis_ReturnsStoredValue()
     {
         // Arrange: make a qubit set to bit=1, basis=0
         var qubit = new Qubit(1, 0);
@@ -57,7 +57,7 @@ public class QubitTests
     }
 
     [TestMethod]
-    public void MeasureWrongBasisCollapsesAndSticks()
+    public void Measure_WrongBasis_CollapsesAndSticks()
     {
         // Arrange: make a qubit set to bit=1, basis=0
         var qubit = new Qubit(1, 0);
@@ -73,7 +73,7 @@ public class QubitTests
     }
 
     [TestMethod]
-    public void SetAfterCollapseAllowsNewState()
+    public void Set_AfterCollapse_AllowsNewState()
     {
         // Arrange: make a qubit set to bit=1, basis=0
         var qubit = new Qubit(1, 0);

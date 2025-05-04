@@ -9,7 +9,7 @@ public class XorCipherTests
 
     [TestMethod]
     [ExpectedException(typeof(ArgumentNullException))]
-    public void ApplyNullDataThrowsArgumentNullException()
+    public void Apply_DataIsNull_ThrowsArgumentNullException()
     {
         // data is null
         byte[] key = new byte[] {1};
@@ -18,7 +18,7 @@ public class XorCipherTests
 
     [TestMethod]
     [ExpectedException(typeof(ArgumentNullException))]
-    public void ApplyNullKeyThrowsArgumentNullException()
+    public void Apply_KeyIsNull_ThrowsArgumentNullException()
     {
         // key is null
         byte[] data = new byte[] { 1, 2, 3 };
@@ -27,7 +27,7 @@ public class XorCipherTests
 
     [TestMethod]
     [ExpectedException(typeof(ArgumentException))]
-    public void ApplyEmptyKeyThrowsArgumentException()
+    public void Apply_KeyIsEmpty_ThrowsArgumentException()
     {
         // key is empty
         byte[] data = new byte[] { 1, 2, 3 };
@@ -35,7 +35,7 @@ public class XorCipherTests
     }
 
     [TestMethod]
-    public void ApplyEmptyDataReturnsEmptyArray()
+    public void Apply_DataIsEmpty_ReturnsEmptyArray()
     {
         // Arrange
         byte[] data = new byte[0];
@@ -50,7 +50,7 @@ public class XorCipherTests
     }
 
     [TestMethod]
-    public void ApplyRoundTripReturnsOriginalData()
+    public void Apply_RoundTrip_EncryptThenDecryptReturnsOriginal()
     {
         // Arrange
         string plain = "HELLO";
@@ -66,7 +66,7 @@ public class XorCipherTests
     }
 
     [TestMethod]
-    public void ApplyKeyShorterThanDataCyclesThroughKey()
+    public void Apply_KeyShorterThanData_CyclesThroughKey()
     {
         // Arrange
         byte[] data = { 1, 2, 3, 4 };
