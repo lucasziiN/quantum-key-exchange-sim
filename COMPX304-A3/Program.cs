@@ -26,6 +26,7 @@ namespace COMPX304_A3
 
             Console.WriteLine();
 
+
             // --- Quick XOR cipher check ---
             string plain = "HELLO";
             string key = "WORLD";
@@ -47,6 +48,35 @@ namespace COMPX304_A3
             // Decrypt again
             round = XorCipher.Apply(cipher, keyB);
             Console.WriteLine("Back to text: " + Encoding.UTF8.GetString(round));
+
+
+            // --- Quick QkeEmulator test ---
+            var emulator = new QkeEmulator();
+
+            string plain1 = "HELLO";
+            int[] key1 = emulator.ExchangeKey(16);
+            Console.WriteLine("Shared key length: " + key1.Length);
+            Console.WriteLine("Bits: " + string.Join(",", key1));
+            
+            byte[] data1 = Encoding.UTF8.GetBytes(plain1);
+            byte[] keyB1 = new byte[key1.Length];
+            for (int i = 0; i< key1.Length; i++)
+            {
+                keyB1[i] = (byte)(key1[i]);
+            }
+            
+
+            // Encrypt
+            byte[] cipher1 = XorCipher.Apply(data1, keyB1);
+            Console.WriteLine("Cipher bytes: " + BitConverter.ToString(cipher1));
+            
+            // Decrypt
+            byte[] round1 = XorCipher.Apply(cipher1, keyB1);
+            Console.WriteLine("Back to text: " + Encoding.UTF8.GetString(round1));
+
+            // Verify
+            var roundText = Encoding.UTF8.GetString(round1);
+            Console.WriteLine("Round-trip OK? " + (roundText == plain1));
 
         }
     }
