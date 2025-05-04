@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace COMPX304_A3
 {
-    class QkeEmulator
+    public class QkeEmulator
     {
         private readonly Random _rng = new Random();
 
