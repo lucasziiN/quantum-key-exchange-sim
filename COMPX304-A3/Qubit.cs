@@ -68,5 +68,10 @@ namespace COMPX304_A3
                     "Polarization must be 0 (circular) or 1 (linear).");
         }
 
-    } 
+        public override string ToString()
+        {
+            return $"Qubit(Value={_value}, Basis={_polarization})";
+        }
+
+    }
 }
