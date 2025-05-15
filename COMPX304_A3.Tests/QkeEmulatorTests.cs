@@ -34,7 +34,7 @@ public class QkeEmulatorTests
         var key = new QkeEmulator().ExchangeKey(N);
         
         // Assert
-        Assert.IsTrue(key.Length <= N,$"Key length ({key.Length}) must be ≤ stream length ({N})");
+        Assert.IsTrue(key.Length <= N,$"Key length ({key.Length}) must be less or equal to stream length ({N})");
     }
 
     [TestMethod]
@@ -68,3 +68,4 @@ public class QkeEmulatorTests
         CollectionAssert.AreEqual(plaintext, round, $"Failed secure exchange for streamLength={streamLength}");
     }
 }
+

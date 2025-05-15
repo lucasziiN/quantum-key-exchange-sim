@@ -77,7 +77,7 @@ namespace COMPX304_A3
             // Verify
             var roundText = Encoding.UTF8.GetString(round1);
             Console.WriteLine("Round-trip OK? " + (roundText == plain1));
-
+            
         }
     }
 }
