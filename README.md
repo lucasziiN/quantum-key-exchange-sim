@@ -43,3 +43,65 @@ This project demonstrates how quantum principles can be applied to securely esta
 3. Both exchange bases and keep bits where polarizations match
 4. Resulting binary key used for XOR encryption
 5. Ciphertext is transmitted and decrypted using XOR + derived key
+```
+
+---
+
+## 📊 Tests & Evaluation
+
+- Qubit class tested with valid/mismatched polarization filters
+- XORCipher tested with edge cases and long binary strings
+- QKE tested with:
+  - 16-bit stream (basic validation)
+  - 256-bit stream (medium test)
+  - 1024-bit stream (realistic use case)
+
+---
+
+## ✅ Example Output:
+
+Original Message: 01001101...
+Generated Key:   10010100...
+Encrypted:       11011001...
+Decrypted:       01001101... ✅
+
+--- 
+
+## 📁 Project Structure
+
+qke-simulator/
+├── qubit.py
+├── xor_cipher.py
+├── qke_protocol.py
+├── test_qubit.py
+├── test_xor_cipher.py
+├── test_qke.py
+└── README.md
+
+---
+
+## 📄 Report
+
+The report (submitted via Moodle) includes:
+
+- Design explanation 
+- Unit testing methodology and results
+- Evaluation and reflection on QKE outcomes
+
+---
+
+## 👨‍🎓 Author
+
+Lucas Oda
+Bachelor of Science (Computer Science Major)
+University of Waikato
+COMPX304 – Assignment 3 (2025)
+
+---
+
+## 📜 License
+
+This project is for educational use under the University of Waikato's academic guidelines.
+
+
+
